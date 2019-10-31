@@ -137,7 +137,7 @@ function getLastCarInfo(invCar) {
  * it will return `This is a Lincoln Navigator`.
 */
 function getCarInfoById(invCar, carID) {
-  return 'This is a ' + invCar[carID ]
+  return 'This is a ' + invCar[carID-1].car_make + ' ' + invCar[carID-1].car_model;
 }
 
 /**
