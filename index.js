@@ -38,12 +38,12 @@ function exampleFunction(num1, num2) {
  * }
 */
 function makePersonObject(id, name, email) {
-  const persOb = {
+  const perOb = {
   id: id,
   name: name,
   email: email,
   }
-  return persOb;
+  return perOb;
 }
 
 
@@ -61,8 +61,8 @@ function makePersonObject(id, name, email) {
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(persName) {
-  return 'Hello, my name is ' + persName.name;
+function getName(perName) {
+  return 'Hello, my name is ' + perName.name;
 }
 
 /**
@@ -164,6 +164,7 @@ function sortCarInventory(invCar) {
 */
 function getModelYears(invCar) {
   let modYear = [];
+
   invCar.forEach( i => {
     modYear.push(i.car_year);
   })
@@ -185,11 +186,11 @@ function getModelYears(invCar) {
 function getOlderCars(invCar, maxYear) {
   let oldCars = [];
 
-  invCar.forEach (i => {
-    if (i.car_year <= maxYear) {
-      oldCars.push(i);
+  for (let i = 0; i < invCar.length; i++){
+    if (invCar[i].car_year <= maxYear) {
+      oldCars.push(invCar[i]);
     }
-  })
+  }
   return oldCars;
 }
 
@@ -204,8 +205,18 @@ function getOlderCars(invCar, maxYear) {
  * made by either `Audi` or `Mercedes-Benz` or `Volkswagen` or `BMW`,
  * in the same order as they appear in the original inventory.
 */
-function getGermanCars(/* code here */) {
-  /* code here */
+function getGermanCars(invCar) {
+  let origInv = []
+
+  for (let i = 0; i < invCar.length; i++) {
+    if (invCar[i].car_make == `Audi` || 
+      invCar[i].car_make == `Mercedes-Benz` || 
+      invCar[i].car_make == `Volkswagen` || 
+      invCar[i].car_make == `BMW`) {
+        origInv.push(invCar[i]);
+    }
+  }
+  return origInv;
 }
 
 /**
