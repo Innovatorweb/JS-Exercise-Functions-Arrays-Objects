@@ -206,7 +206,7 @@ function getOlderCars(invCar, maxYear) {
  * in the same order as they appear in the original inventory.
 */
 function getGermanCars(invCar) {
-  let origInv = []
+  let germOrigInv = []
 
   for (let i = 0; i < invCar.length; i++) {
     if (invCar[i].car_make == `Audi` || 
@@ -216,7 +216,7 @@ function getGermanCars(invCar) {
         origInv.push(invCar[i]);
     }
   }
-  return origInv;
+  return germOrigInv;
 }
 
 /**
